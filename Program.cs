@@ -9,14 +9,13 @@
 
         static void Main(string[] args)
         {
-            // Initialize database on startup
             DatabaseInitializer.Initialize(connectionString);
 
             while (true)
             {
                 if (currentUserId == 0)
                 {
-                    DisplayAuthMenu();
+                    DisplayLoginMenu();
                 }
                 else
                 {
@@ -25,15 +24,15 @@
             }
         }
 
-        static void DisplayAuthMenu()
+        static void DisplayLoginMenu()
         {
             Console.Clear();
             Console.WriteLine($"{TextStyling.CYAN}====================================={TextStyling.NORMAL}");
-            Console.WriteLine($"{TextStyling.CYAN}||  {TextStyling.BOLD}{TextStyling.MAGENTA}Personal Finance App - Login{TextStyling.NOBOLD}{TextStyling.CYAN}  ||{TextStyling.NORMAL}");
+            Console.WriteLine($"{TextStyling.CYAN}||  {TextStyling.BOLD}{TextStyling.MAGENTA}Personal Finance App - Login{TextStyling.NOBOLD}{TextStyling.CYAN}   ||{TextStyling.NORMAL}");
             Console.WriteLine($"{TextStyling.CYAN}====================================={TextStyling.NORMAL}");
-            Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}1{TextStyling.CYAN}]{TextStyling.YELLOW} Login{TextStyling.CYAN}                    ||");
-            Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}2{TextStyling.CYAN}]{TextStyling.YELLOW} Register{TextStyling.CYAN}                 ||");
-            Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}3{TextStyling.CYAN}]{TextStyling.YELLOW} Exit{TextStyling.CYAN}                     ||");
+            Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}1{TextStyling.CYAN}]{TextStyling.YELLOW} Login{TextStyling.CYAN}                      ||");
+            Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}2{TextStyling.CYAN}]{TextStyling.YELLOW} Register{TextStyling.CYAN}                   ||");
+            Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}3{TextStyling.CYAN}]{TextStyling.YELLOW} Exit{TextStyling.CYAN}                       ||");
             Console.WriteLine($"{TextStyling.CYAN}====================================={TextStyling.NORMAL}");
             Console.Write($"{TextStyling.NOBOLD}Select an option: ");
 
@@ -97,9 +96,8 @@
             {
                 Console.Clear();
                 Console.WriteLine($"{TextStyling.CYAN}====================================={TextStyling.NORMAL}");
-                Console.WriteLine($"{TextStyling.CYAN}||  {TextStyling.BOLD}{TextStyling.MAGENTA}Personal Finance App{TextStyling.NOBOLD}{TextStyling.CYAN}  ||{TextStyling.NORMAL}");
+                Console.WriteLine($"{TextStyling.CYAN}||    {TextStyling.BOLD}{TextStyling.MAGENTA}Personal Finance App{TextStyling.NOBOLD}{TextStyling.CYAN}         ||{TextStyling.NORMAL}");
                 Console.WriteLine($"{TextStyling.CYAN}====================================={TextStyling.NORMAL}");
-                Console.WriteLine($"{TextStyling.GREY}Logged in as: {TextStyling.YELLOW}{currentUsername}{TextStyling.NORMAL}");
                 Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}1{TextStyling.CYAN}]{TextStyling.YELLOW} Add Transaction{TextStyling.CYAN}            ||");
                 Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}2{TextStyling.CYAN}]{TextStyling.YELLOW} Delete Transaction{TextStyling.CYAN}         ||");
                 Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}3{TextStyling.CYAN}]{TextStyling.YELLOW} Current Balance{TextStyling.CYAN}            ||");
@@ -107,6 +105,8 @@
                 Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}5{TextStyling.CYAN}]{TextStyling.YELLOW} Search Expenses{TextStyling.CYAN}            ||");
                 Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}6{TextStyling.CYAN}]{TextStyling.YELLOW} Logout{TextStyling.CYAN}                     ||");
                 Console.WriteLine($"{TextStyling.CYAN}||  [{TextStyling.ORANGE}7{TextStyling.CYAN}]{TextStyling.YELLOW} Exit{TextStyling.CYAN}                       ||");
+                Console.WriteLine($"{TextStyling.CYAN}====================================={TextStyling.NORMAL}");
+                Console.WriteLine($"{TextStyling.GREY}Logged in as: {TextStyling.YELLOW}{currentUsername}{TextStyling.NORMAL}");
                 Console.WriteLine($"{TextStyling.CYAN}====================================={TextStyling.NORMAL}");
                 Console.Write($"{TextStyling.NOBOLD}Select an option: ");
 
