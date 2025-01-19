@@ -15,6 +15,30 @@ namespace PersonalFinanceApp
 
         public void AddTransaction(DateTime date, decimal amount, string type, string description)
         {
+            if (date > DateTime.Today)
+            {
+                Console.WriteLine("Cannot add transactions for future dates");
+                return;
+            }
+
+            if (amount <= 0)
+            {
+                Console.WriteLine("Amount must be greater than zero");
+                return;
+            }
+
+            if (amount > 10000000000) 
+            {
+                Console.WriteLine("Amount exceeds maximum allowed value");
+                return;
+            }
+
+            if (type != "Income" && type != "Expense")
+            {
+                Console.WriteLine("Type must be either 'Income' or 'Expense'");
+                return;
+            }
+
             using (var conn = new NpgsqlConnection(_connectionString))
             {
                 conn.Open();
@@ -40,7 +64,6 @@ namespace PersonalFinanceApp
                 using (var conn = new NpgsqlConnection(_connectionString))
                 {
                     conn.Open();
-                    // First get the transaction_id for the given index
                     using (var cmd = new NpgsqlCommand(@"
                         SELECT transaction_id FROM transactions 
                         WHERE user_id = @userId 
@@ -53,7 +76,6 @@ namespace PersonalFinanceApp
 
                         if (transactionId != null)
                         {
-                            // Delete the transaction
                             using (var deleteCmd = new NpgsqlCommand(
                                 "DELETE FROM transactions WHERE transaction_id = @transactionId AND user_id = @userId", conn))
                             {

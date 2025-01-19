@@ -3,13 +3,22 @@
     class Program
     {
         private static string connectionString = "Host=localhost;Username=postgres;Password=password;Database=personalfinance";
-        private static TransactionManager transactionManager;
-        private static string currentUsername;
+        private static TransactionManager? transactionManager;
+        private static string? currentUsername;
         private static int currentUserId;
 
         static void Main(string[] args)
         {
-            DatabaseInitializer.Initialize(connectionString);
+            try
+            {
+                DatabaseInitializer.Initialize(connectionString);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to connect to database.");
+                Console.WriteLine($"Error: {ex.Message}");
+                return;
+            }
 
             while (true)
             {

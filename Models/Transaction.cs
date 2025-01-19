@@ -1,5 +1,3 @@
-using System;
-
 namespace PersonalFinanceApp
 {
     public class Transaction

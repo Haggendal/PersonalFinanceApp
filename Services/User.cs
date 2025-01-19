@@ -60,7 +60,7 @@ namespace PersonalFinanceApp
                 }
                 catch (PostgresException ex)
                 {
-                    if (ex.SqlState == "23505") // Unique violation
+                    if (ex.SqlState == "23505")
                     {
                         Console.WriteLine("Username already exists");
                     }
