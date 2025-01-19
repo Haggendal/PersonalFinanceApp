@@ -1,0 +1,44 @@
+[
+  {
+    "Date": "2024-09-23T00:00:00",
+    "Amount": 300000,
+    "Type": "Income",
+    "Description": "Wage"
+  },
+  {
+    "Date": "2024-09-10T00:00:00",
+    "Amount": 400000,
+    "Type": "Expense",
+    "Description": "Loan"
+  },
+  {
+    "Date": "2024-09-30T00:00:00",
+    "Amount": 2000,
+    "Type": "Income",
+    "Description": "Gift"
+  },
+  {
+    "Date": "2022-02-02T00:00:00",
+    "Amount": 3000,
+    "Type": "Expense",
+    "Description": "Pickpocket"
+  },
+  {
+    "Date": "2021-01-01T00:00:00",
+    "Amount": 303030,
+    "Type": "Income",
+    "Description": "Quest Reward"
+  },
+  {
+    "Date": "2024-08-02T00:00:00",
+    "Amount": 120,
+    "Type": "Expense",
+    "Description": "Gulasch"
+  },
+  {
+    "Date": "1993-04-02T00:00:00",
+    "Amount": 30000,
+    "Type": "Income",
+    "Description": ""
+  }
+]
